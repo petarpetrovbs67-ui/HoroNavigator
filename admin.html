@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Администрация | ХороНавигатор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    function saveTitle() {
+        const newTitle = document.getElementById("title-input").value;
+
+        if (newTitle.trim() === "") {
+            document.getElementById("status").textContent =
+                "Моля, въведи заглавие!";
+            return;
+        }
+
+        localStorage.setItem("mainTitle", newTitle);
+
+        document.getElementById("status").textContent =
+            "Заглавието е запазено успешно!";
+    }
+    function saveTrakia() {
+    const description = document.getElementById("trakia-input").value;
+
+    if (description.trim() === "") {
+        document.getElementById("trakia-status").textContent =
+            "Моля, въведи описание!";
+        return;
+    }
+
+    localStorage.setItem("trakiaDescription", description);
+
+    document.getElementById("trakia-status").textContent =
+        "Описанието е запазено успешно!";
+}
+</script>
+<body>
+
+    <header>
+        <h1>ХороНавигатор</h1>
+        <p>Административен панел</p>
+    </header>
+
+    <main class="admin-panel">
+        <h2>Добре дошъл, администратор!</h2>
+        <p>Оттук ще управляваш съдържанието на сайта.</p>
+<section class="editor">
+    <h3>Редактиране на заглавието</h3>
+
+    <input
+        type="text"
+        id="title-input"
+        placeholder="Напиши ново заглавие"
+    >
+
+    <button onclick="saveTitle()">Запази промените</button>
+
+    <p id="status"></p>
+    <hr>
+
+<h3>Редактиране на Тракийската област</h3>
+
+<textarea
+    id="trakia-input"
+    placeholder="Напиши описание на Тракийската област"
+    rows="5">
+</textarea>
+
+<button onclick="saveTrakia()">Запази описанието</button>
+
+<p id="trakia-status"></p>
+</section>
+        <div class="admin-menu">
+            <button>Редактиране на началната страница</button>
+            <button>Управление на фолклорните области</button>
+            <button>Управление на народните танци</button>
+            <button>Снимки и видеоклипове</button>
+        </div>
+
+        <a href="index.html">Обратно към сайта</a>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ХороНавигатор | Български народни танци</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🇧🇬 ХороНавигатор</div>
+
+        <nav>
+    <a href="#home">Начало</a>
+    <a href="#regions">Фолклорни области</a>
+    <a href="map.html">Фолклорна карта</a>
+    <a href="#dances">Танци</a>
+    <a href="#about">За нас</a>
+</nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+            <p class="subtitle">БЪЛГАРСКОТО ФОЛКЛОРНО НАСЛЕДСТВО</p>
+
+            <h1 id="main-title">Открий ритъма<br>на България.</h1>
+
+            <p class="description">
+                Пътешествие из света на българските
+                народни танци, музика и традиции.
+            </p>
+
+            <a href="#dances" class="button">
+                Разгледай танците
+            </a>
+        </section>
+
+        <section class="content" id="regions">
+
+    <p class="subtitle">ФОЛКЛОРНОТО БОГАТСТВО НА БЪЛГАРИЯ</p>
+
+    <h2>Шест фолклорни области</h2>
+
+    <p>Всяка област има свой характер, ритъм и танцово наследство.</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <span>🌿</span>
+            <h3>Шопска област</h3>
+            <p>Живи ритми и темпераментни хора.</p>
+            <a href="#">Научи повече</a>
+        </div>
+
+        <div class="card">
+            <span>🌹</span>
+            <h3>Тракийска област</h3>
+            <p>Богатство от мелодии и танцови движения.</p>
+            <a href="trakia.html">Научи повече</a>
+        </div>
+
+        <div class="card">
+            <span>⛰️</span>
+            <h3>Пиринска област</h3>
+            <p>Характерни ритми и разнообразни хора.</p>
+            <a href="#">Научи повече</a>
+        </div>
+
+        <div class="card">
+            <span>🌾</span>
+            <h3>Добруджанска област</h3>
+            <p>Танцови традиции от равнината.</p>
+            <a href="#">Научи повече</a>
+        </div>
+
+        <div class="card">
+            <span>🏔️</span>
+            <h3>Родопска област</h3>
+            <p>Характерни бавни и плавни мелодии.</p>
+            <a href="#">Научи повече</a>
+        </div>
+
+        <div class="card">
+            <span>🎶</span>
+            <h3>Северняшка област</h3>
+            <p>Разнообразни ритми и танцови форми.</p>
+            <a href="#">Научи повече</a>
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="content" id="dances">
+            <h2>Светът на народните танци</h2>
+
+            <p>
+                Научи повече за хората, техните стъпки,
+                ритми и произход.
+            </p>
+        </section>
+
+<section class="content music-library" id="music">
+
+    <p class="subtitle">МУЗИКАЛНОТО БОГАТСТВО НА БЪЛГАРИЯ</p>
+
+    <h2>Звукът на България</h2>
+
+    <p>
+        Потопи се в магията на българската народна музика.
+        Открий мелодиите на шестте фолклорни области.
+    </p>
+
+    <div class="music-cards">
+
+        <div class="music-card">
+    <span>🌿</span>
+    <h3>Шопска област</h3>
+    <p>Живи ритми и характерни неравноделни тактове.</p>
+
+    <div class="custom-player">
+        <button class="play-btn" onclick="toggleMusic(this)">▶</button>
+        <div class="player-info">
+            <p class="song-title">Петрунино хоро</p>
+            <audio>
+                <source src="./audio/shopska.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" class="progress" value="0" min="0" max="100">
+            <div class="player-time">
+                
+                <span class="duration">02:39</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+
+<div class="music-card">
+    <span>🌹</span>
+    <h3>Тракийска област</h3>
+    <p>Мелодични песни и буйни ритми.</p>
+
+    <div class="custom-player">
+        <button class="play-btn" onclick="toggleMusic(this)">
+            ▶
+        </button>
+
+        <div class="player-info">
+            <p class="song-title">Трите пъти</p>
+            <audio>
+                <source src="./audio/trakia.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" class="progress" value="0" min="0" max="100">
+            <div class="player-time">
+                
+                <span class="duration">02:24</span>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="music-card">
+    <span>🌾</span>
+    <h3>Добруджанска област</h3>
+    <p>Широки стъпки и неповторим добруджански дух.</p>
+
+    <div class="custom-player">
+        <button class="play-btn" onclick="toggleMusic(this)">▶</button>
+        <div class="player-info">
+            <p class="song-title">Сборенка</p>
+            <audio>
+                <source src="./audio/dobrudzhanska.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" class="progress" value="0" min="0" max="100">
+            <div class="player-time">
+                
+                <span class="duration">03:13</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="music-card">
+    <span>⛰️</span>
+    <h3>Родопска област</h3>
+    <p>Нежни песни и магията на родопската каба гайда.</p>
+
+    <div class="custom-player">
+        <button class="play-btn" onclick="toggleMusic(this)">▶</button>
+        <div class="player-info">
+            <p class="song-title">Стига Ми Се, Момне ле, Навдигай – Росица Пейчева</p>
+            <audio>
+                <source src="./audio/rodopska.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" class="progress" value="0" min="0" max="100">
+            <div class="player-time">
+                
+                <span class="duration">03:55</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="music-card">
+    <span>🏔️</span>
+    <h3>Пиринска област</h3>
+    <p>Красиви мелодии и вихрени танцови ритми.</p>
+
+    <div class="custom-player">
+        <button class="play-btn" onclick="toggleMusic(this)">▶</button>
+        <div class="player-info">
+            <p class="song-title">Малешевско хоро</p>
+            <audio>
+                <source src="./audio/pirinska.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" class="progress" value="0" min="0" max="100">
+            <div class="player-time">
+                
+                <span class="duration">02:34</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="music-card">
+    <span>🎶</span>
+    <h3>Северняшка област</h3>
+    <p>Енергични хора и богата танцова традиция.</p>
+
+    <div class="custom-player">
+        <button class="play-btn" onclick="toggleMusic(this)">▶</button>
+        <div class="player-info">
+            <p class="song-title">Фурла (Изручанка)</p>
+            <audio>
+                <source src="./audio/severnyashka.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" class="progress" value="0" min="0" max="100">
+            <div class="player-time">
+                
+                <span class="duration">02:40</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+</section>
+
+        <section class="content" id="about">
+            <h2>За ХороНавигатор</h2>
+
+            <p>
+                Проект, посветен на съхраняването
+                и популяризирането на българския
+                фолклор чрез съвременни технологии.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>ХороНавигатор © 2026</p>
+        <p>Създаден с уважение към българските традиции.</p>
+    </footer>
+<script>
+    const savedTitle = localStorage.getItem("mainTitle");
+
+    if (savedTitle) {
+        document.getElementById("main-title").textContent = savedTitle;
+    }
+</script>
+
+<div class="anthem-player">
+    <h2>🇧🇬 Българският химн</h2>
+
+    <audio id="anthem-audio" controls>
+        <source src="./audio/Химн на Република България - Мила Родино.mp3" type="audio/mpeg">
+        Браузърът не поддържа аудио.
+    </audio>
+</div>
+
+<script>
+    const anthem = document.getElementById("anthem-audio");
+
+    anthem.addEventListener("error", function() {
+        console.log("Аудиофайлът не може да бъде зареден.");
+    });
+</script>
+
+<script>
+function toggleMusic(button) {
+    const player = button.closest(".custom-player").querySelector("audio");
+
+    if (player.paused) {
+        document.querySelectorAll(".custom-player audio").forEach(audio => {
+            audio.pause();
+            audio.closest(".custom-player").querySelector(".play-btn").textContent = "▶";
+        });
+
+        player.play().then(() => {
+            button.textContent = "Ⅱ";
+        }).catch(error => {
+            console.error("Грешка при пускане:", error);
+        });
+
+    } else {
+        player.pause();
+        button.textContent = "▶";
+    }
+}
+
+document.querySelectorAll(".custom-player").forEach(container => {
+    const audio = container.querySelector("audio");
+    const progress = container.querySelector(".progress");
+
+    audio.addEventListener("timeupdate", function() {
+        if (audio.duration) {
+            progress.value = (audio.currentTime / audio.duration) * 100;
+        }
+    });
+
+    progress.addEventListener("input", function() {
+        if (audio.duration) {
+            audio.currentTime = (progress.value / 100) * audio.duration;
+        }
+    });
+
+    audio.addEventListener("ended", function() {
+        container.querySelector(".play-btn").textContent = "▶";
+        progress.value = 0;
+    });
+});
+</script>
+
+</body>
+</html>

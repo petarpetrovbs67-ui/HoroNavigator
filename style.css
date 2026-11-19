@@ -1,0 +1,463 @@
+box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f0e5;
+    color: #263b30;
+}
+
+header {
+    background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 33.33%,
+    #00966e 33.33%,
+    #00966e 66.66%,
+    #d62632 66.66%,
+    #d62632 100%
+);
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #e6bd72;
+}
+
+.hero {
+    text-align: center;
+    padding: 110px 20px;
+    background: #254b39;
+    color: white;
+}
+
+.subtitle {
+    color: #e6bd72;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin: 25px 0;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+
+.button {
+    display: inline-block;
+    background: #a52e32;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #842328;
+}
+
+.content {
+    text-align: center;
+    padding: 65px 7%;
+}
+
+.content h2 {
+    font-size: 32px;
+    color: #254b39;
+}
+
+.content p {
+    line-height: 1.7;
+}
+
+.card {
+    background: white;
+    padding: 35px 22px;
+    border-radius: 12px;
+    border-bottom: 4px solid #a52e32;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.card span {
+    font-size: 42px;
+}
+
+.card h3 {
+    color: #254b39;
+    font-size: 21px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #a52e32;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.card {
+    background: white;
+    padding: 35px 15px;
+    border-radius: 10px;
+    border-bottom: 4px solid #a52e32;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+footer {
+    background: #19382c;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+.cards {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 25px;
+        margin-top: 35px;
+    }
+@media (max-width: 700px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}    
+.region-hero {
+    background: #254b39;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.region-hero h1 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+.region-hero p {
+    line-height: 1.7;
+}
+
+.region-content {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 25px;
+    line-height: 1.8;
+}
+
+.region-content h2 {
+    color: #254b39;
+    margin-top: 35px;
+}
+
+.region-content .button {
+    margin-top: 25px;
+}
+    
+
+
+.region-photo {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    margin: 30px auto 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.photo-credit {
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 35px;
+}
+
+/* МУЗИКАЛНА БИБЛИОТЕКА */
+
+.music-library {
+    text-align: center;
+}
+
+.music-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.music-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.music-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.music-card span {
+    font-size: 38px;
+}
+
+.music-card h3 {
+    margin: 15px 0 10px;
+}
+
+.music-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .music-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .music-cards {
+        grid-template-columns: 1fr;
+    }
+}
+.music-card audio {
+    width: 100%;
+    margin-top: 15px;
+}
+.song-title {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #8b1e1e;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ПЕРСОНАЛИЗИРАН МУЗИКАЛЕН ПЛЕЙЪР */
+
+.custom-player {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f8f1e9;
+    padding: 15px;
+    border-radius: 14px;
+    margin-top: 18px;
+}
+
+.play-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #8b1e1e;
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    background: #641313;
+}
+
+.player-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.player-info .song-title {
+    margin: 0 0 8px;
+    text-align: left;
+}
+
+.progress {
+    width: 100%;
+    cursor: pointer;
+    accent-color: #8b1e1e;
+}
+.player-time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* ИНТЕРАКТИВНА ФОЛКЛОРНА КАРТА */
+
+.folklore-map-section {
+    padding: 40px 7%;
+}
+
+.map-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.map-placeholder,
+.region-information {
+    background: #fffaf4;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.region-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.region-buttons button {
+    padding: 18px 12px;
+    border: none;
+    border-radius: 12px;
+    background: #8b1e1e;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.region-buttons button:hover {
+    background: #641313;
+    transform: translateY(-3px);
+}
+
+.region-information {
+    min-height: 250px;
+}
+
+@media (max-width: 800px) {
+    .map-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* SVG ИНТЕРАКТИВНА КАРТА */
+
+.bulgaria-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+}
+
+.map-region {
+    stroke: #ffffff;
+    stroke-width: 4;
+    stroke-linejoin: round;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.shopska {
+    fill: #65a86b;
+}
+
+.severnyashka {
+    fill: #5599cf;
+}
+
+.dobrudzhanska {
+    fill: #e4bd51;
+}
+
+.trakia {
+    fill: #d88a48;
+}
+
+.pirinska {
+    fill: #9974bd;
+}
+
+.rodopska {
+    fill: #478b60;
+}
+
+.map-region:hover {
+    filter: brightness(1.15);
+    stroke: #8b1e1e;
+    stroke-width: 6;
+}
+
+.map-labels {
+    fill: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-anchor: middle;
+    pointer-events: none;
+    paint-order: stroke;
+    stroke: #333333;
+    stroke-width: 2px;
+    stroke-linejoin: round;
+}

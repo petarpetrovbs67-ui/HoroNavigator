@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Тракийска област | ХороНавигатор</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🇧🇬 ХороНавигатор</div>
+
+        <nav>
+            <a href="index.html">Начало</a>
+            <a href="index.html#regions">Фолклорни области</a>
+            <a href="index.html#dances">Танци</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="region-hero">
+            <p class="subtitle">БЪЛГАРСКИ ФОЛКЛОР</p>
+
+            <h1>Тракийска област</h1>
+
+            <p>
+                Открий богатството на тракийските
+                народни танци, музика и традиции.
+            </p>
+        </section>
+
+        <section class="region-content">
+
+            <h2>За Тракийската област</h2>
+
+            <p>
+                Тракийската фолклорна област е една
+                от шестте основни фолклорни области
+                на България.<p id="trakia-description"></p>
+            </p>
+
+<img src="./trakia-dance.jpg"
+     alt="Български народен танц от Тракия"
+     class="region-photo">
+
+<p class="photo-credit">
+    Снимка: Zvezditza.dance /
+    Wikimedia Commons, CC BY-SA 4.0
+</p>
+
+            <h2>Танцово наследство</h2>
+
+            <p>
+                Тракийският танцов фолклор се отличава
+                с разнообразие от движения, ритми
+                и танцови форми.
+            </p>
+
+            <h2>Музикални инструменти</h2>
+
+            <p>
+                В традиционната музика се използват
+                инструменти като гайда, кавал,
+                гъдулка и тъпан.
+            </p>
+
+            <a href="index.html#regions" class="button">
+                Обратно към областите
+            </a>
+<script>
+    const savedDescription = localStorage.getItem("trakiaDescription");
+
+    if (savedDescription) {
+        document.getElementById("trakia-description").textContent =
+            savedDescription;
+    }
+</script>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>ХороНавигатор © 2026</p>
+        <p>С уважение към българските традиции.</p>
+    </footer>
+
+</body>
+</html>

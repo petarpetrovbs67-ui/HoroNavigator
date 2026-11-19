@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Фолклорна карта на България | ХороНавигатор</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">ХороНавигатор</div>
+
+        <nav>
+            <a href="index.html">Начало</a>
+            <a href="map.html">Фолклорна карта</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="content">
+            <p class="subtitle">ФОЛКЛОРНОТО БОГАТСТВО НА БЪЛГАРИЯ</p>
+
+            <h1>Интерактивна фолклорна карта</h1>
+
+            <p>
+                Открий шестте фолклорни области на България.
+                Избери област и се потопи в нейната история,
+                музика, танци, носии и традиции.
+            </p>
+        </section>
+
+        <section class="folklore-map-section">
+
+            <div class="map-container">
+
+                
+
+<div class="map-placeholder">
+    <h2>Фолклорна карта на България</h2>
+    <p>Избери фолклорна област.</p>
+<div id="bulgaria-map-container"></div>
+    
+</div>
+
+
+</div>
+
+
+                <div class="region-information">
+
+                    <h2>Добре дошъл!</h2>
+
+                    <p>
+                        Избери една от шестте фолклорни области,
+                        за да научиш повече за нейното богатство.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+<script>
+const regionGroups = {
+    "BG-01": "pirinska",
+    "BG-02": "trakiyska",
+    "BG-03": "dobrudzhanska",
+    "BG-04": "severnyashka",
+    "BG-05": "severnyashka",
+    "BG-06": "severnyashka",
+    "BG-07": "severnyashka",
+    "BG-08": "dobrudzhanska",
+    "BG-09": "rodopska",
+    "BG-10": "shopska",
+    "BG-11": "severnyashka",
+    "BG-12": "severnyashka",
+    "BG-13": "trakiyska",
+    "BG-14": "shopska",
+    "BG-15": "severnyashka",
+    "BG-16": "trakiyska",
+    "BG-17": "dobrudzhanska",
+    "BG-18": "severnyashka",
+    "BG-19": "dobrudzhanska",
+    "BG-20": "trakiyska",
+    "BG-21": "rodopska",
+    "BG-22": "shopska",
+    "BG-23": "shopska",
+    "BG-24": "trakiyska",
+    "BG-25": "dobrudzhanska",
+    "BG-26": "trakiyska",
+    "BG-27": "dobrudzhanska",
+    "BG-28": "trakiyska"
+};
+
+const regionColors = {
+    shopska: "#65a86b",
+    severnyashka: "#5599cf",
+    trakiyska: "#d99b54",
+    dobrudzhanska: "#d6c15b",
+    rodopska: "#a783c7",
+    pirinska: "#d87878"
+};
+
+const regionNames = {
+    shopska: "Шопска област",
+    severnyashka: "Северняшка област",
+    trakiyska: "Тракийска област",
+    dobrudzhanska: "Добруджанска област",
+    rodopska: "Родопска област",
+    pirinska: "Пиринска област"
+};
+
+const regionInfo = {
+    shopska: {
+        title: "Шопска фолклорна област",
+        character: "Шопският фолклор се отличава с енергичност, темперамент и характерно многогласно пеене.",
+        dances: "Шопско хоро, Граовско хоро, Бистришка копаница, Копче и Шопска ръченица.",
+        music: "Характерни са бързите ритми, специфичното двугласно пеене и живото звучене.",
+        costumes: "Традиционните носии включват сукманени и саяни облекла, престилки, пояси и характерни накити.",
+        instruments: "Гъдулка, кавал, гайда, тъпан и зурна.",
+        traditions: "Сурвакане, коледуване, лазаруване и местни събори."
+    },
+
+    trakiyska: {
+        title: "Тракийска фолклорна област",
+        character: "Тракийският фолклор е известен със своята мелодичност, богатство на песни и разнообразие от танцови движения.",
+        dances: "Право тракийско хоро, Тракийска ръченица, Копаница и Криво хоро.",
+        music: "Песните често са плавни и мелодични, а танцовите мелодии могат да бъдат както лирични, така и много темпераментни.",
+        costumes: "Характерни са сукманените носии, красивите престилки, везаните ризи и традиционните пояси.",
+        instruments: "Гайда, кавал, гъдулка, тъпан и тамбура.",
+        traditions: "Кукерски игри, коледуване, лазаруване и празници, свързани със земеделския календар."
+    },
+
+    pirinska: {
+        title: "Пиринска фолклорна област",
+        character: "Пиринският фолклор се отличава с богат песенен репертоар, силен темперамент и характерни танцови ритми.",
+        dances: "Македонско хоро, Малешевско хоро, Пиринска ръченица и други местни хора.",
+        music: "Характерни са многогласните песни, богатите мелодии и специфичните ритмични модели.",
+        costumes: "Носийната традиция включва сукманени и саяни облекла, везани ризи и разнообразни накити.",
+        instruments: "Зурна, тъпан, гайда, кавал и тамбура.",
+        traditions: "Събори, празници на плодородието, коледуване и лазаруване."
+    },
+
+    rodopska: {
+        title: "Родопска фолклорна област",
+        character: "Родопският фолклор е разпознаваем със своите протяжни песни, плавни мелодии и характерна атмосфера.",
+        dances: "Родопско хоро, Чамче, Сворнато хоро и местни танцови разновидности.",
+        music: "Отличава се с бавни и протяжни мелодии, характерно пеене и богата песенна традиция.",
+        costumes: "Традиционните носии включват сукмани, вълнени тъкани, престилки и характерни местни елементи.",
+        instruments: "Каба гайда, кавал, гъдулка и тъпан.",
+        traditions: "Гергьовден, Илинденски събори, седенки и традиции, свързани с планинския живот."
+    },
+
+    dobrudzhanska: {
+        title: "Добруджанска фолклорна област",
+        character: "Добруджанският фолклор носи духа на равнината. Танците са свързани с уверената стъпка и характерната добруджанска танцова пластика.",
+        dances: "Добруджанска ръченица, Сборенка, Опас и други местни хора.",
+        music: "Песните често са свързани с трудовия живот, любовта и природата. Срещат се характерни неравноделни ритми.",
+        costumes: "Характерни са сукманените носии, богато украсените престилки, везаните ризи и традиционните пояси.",
+        instruments: "Гъдулка, кавал, гайда, тъпан и акордеон в по-новата традиция.",
+        traditions: "Жътварски обичаи, събори, коледуване и празници, свързани със земеделието."
+    },
+
+    severnyashka: {
+        title: "Северняшка фолклорна област",
+        character: "Северняшкият фолклор се отличава с разнообразни танци, динамични движения и богата музикална традиция.",
+        dances: "Дайчово хоро, Дунавско хоро, Еленино хоро и Северняшка ръченица.",
+        music: "Характерни са разнообразните ритми, живите инструментални мелодии и песните с различна тематика.",
+        costumes: "Традиционните носии включват бели ризи, сукмани, престилки, пояси и характерни украси.",
+        instruments: "Кавал, гъдулка, гайда, тъпан и зурна.",
+        traditions: "Коледуване, лазаруване, жътварски обичаи и традиционни народни събори."
+    }
+};
+
+async function loadFolkloreMap() {
+    const container = document.getElementById("bulgaria-map-container");
+    const info = document.querySelector(".region-information");
+
+    try {
+        const response = await fetch("./bulgaria.svg");
+
+        if (!response.ok) {
+            throw new Error("SVG файлът не беше намерен.");
+        }
+
+        const svgText = await response.text();
+
+        const parser = new DOMParser();
+        const svgDocument = parser.parseFromString(
+            svgText,
+            "image/svg+xml"
+        );
+
+        const svg = svgDocument.documentElement;
+
+        if (svg.querySelector("parsererror")) {
+            throw new Error("SVG файлът има проблем със структурата.");
+        }
+
+        const map = document.importNode(svg, true);
+
+        map.style.width = "100%";
+        map.style.height = "auto";
+        map.style.display = "block";
+
+        container.replaceChildren(map);
+
+        const regions = map.querySelectorAll("path[id]");
+
+        regions.forEach(path => {
+            const id = path.getAttribute("id");
+            const group = regionGroups[id];
+
+            if (!group) return;
+
+            path.style.fill = regionColors[group];
+            path.style.stroke = "#ffffff";
+            path.style.strokeWidth = "2";
+            path.style.cursor = "pointer";
+            path.style.transition = "0.2s";
+
+            path.addEventListener("mouseenter", () => {
+                path.style.opacity = "0.7";
+            });
+
+            path.addEventListener("mouseleave", () => {
+                path.style.opacity = "1";
+            });
+
+            
+path.addEventListener("click", () => {
+    const data = regionInfo[group];
+
+    if (!data) return;
+
+    const title = path.querySelector("title");
+    const areaName = title
+        ? title.textContent
+        : id;
+
+    info.innerHTML = `
+        <h2>${data.title}</h2>
+
+        <p><strong>Избрана административна област:</strong> ${areaName}</p>
+
+        <div class="region-detail">
+            <h3>📜 История и характер</h3>
+            <p>${data.character}</p>
+        </div>
+
+        <div class="region-detail">
+            <h3>💃 Народни танци</h3>
+            <p>${data.dances}</p>
+        </div>
+
+        <div class="region-detail">
+            <h3>🎵 Народна музика</h3>
+            <p>${data.music}</p>
+        </div>
+
+        <div class="region-detail">
+            <h3>👘 Народни носии</h3>
+            <p>${data.costumes}</p>
+        </div>
+
+        <div class="region-detail">
+            <h3>🪗 Народни инструменти</h3>
+            <p>${data.instruments}</p>
+        </div>
+
+        <div class="region-detail">
+            <h3>🌿 Традиции и обичаи</h3>
+            <p>${data.traditions}</p>
+        </div>
+    `;
+});
+
+        });
+
+        console.log("Фолклорната карта е заредена!");
+        console.log("Намерени области:", regions.length);
+
+    } catch (error) {
+        console.error("Проблем с картата:", error);
+        info.innerHTML = "<h2>Картата не успя да се зареди.</h2><p>Провери файла bulgaria.svg.</p>";
+    }
+}
+
+loadFolkloreMap();
+</script>
+
+</body>
+</html>
