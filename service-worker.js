@@ -1,14 +1,12 @@
-const CACHE_NAME = "horonavigator-v1";
+
+const CACHE_NAME = "horonavigator-v2";
 
 const FILES_TO_CACHE = [
     "./",
     "./index.html",
     "./style.css",
-    "./map.html",
-    "./trakia.html",
-    "./admin.html",
-    "./bulgaria.svg",
-    "./trakia-dance.jpg"
+    "./script.js",
+    "./manifest.json"
 ];
 
 self.addEventListener("install", event => {
@@ -38,9 +36,25 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
     if (event.request.method !== "GET") return;
 
+    const url = new URL(event.request.url);
+
+    if (url.origin !== self.location.origin) return;
+
     event.respondWith(
-        caches.match(event.request).then(cachedResponse => {
-            return cachedResponse || fetch(event.request);
-        })
+        fetch(event.request)
+            .then(response => {
+                if (response.ok) {
+                    const copy = response.clone();
+
+                    caches.open(CACHE_NAME).then(cache => {
+                        cache.put(event.request, copy);
+                    });
+                }
+
+                return response;
+            })
+            .catch(() => {
+                return caches.match(event.request);
+            })
     );
 });
